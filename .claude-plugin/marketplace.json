@@ -1,0 +1,30 @@
+{
+  "name": "robworks-claude-code-plugins",
+  "owner": {
+    "name": "Ryan Robson",
+    "url": "https://github.com/ringo380"
+  },
+  "metadata": {
+    "description": "Robworks Claude Code Plugins — a personal catalog of Claude Code plugins authored by Ryan Robson (ringo380).",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "ga-mcp-full",
+      "source": {
+        "source": "github",
+        "repo": "ringo380/ga-mcp-full"
+      },
+      "description": "GA4 MCP server with full Admin API read/write access — bundled with Claude Code auth helpers and SessionStart bootstrap.",
+      "homepage": "https://github.com/ringo380/ga-mcp-full",
+      "repository": "https://github.com/ringo380/ga-mcp-full",
+      "license": "MIT",
+      "author": {
+        "name": "Ryan Robson"
+      },
+      "category": "analytics",
+      "tags": ["mcp", "google-analytics", "ga4", "analytics"],
+      "keywords": ["google-analytics", "ga4", "mcp", "analytics"]
+    }
+  ]
+}
