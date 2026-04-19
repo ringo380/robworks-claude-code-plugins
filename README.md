@@ -44,9 +44,9 @@ Inside Claude Code:
 
 ## Available plugins
 
-| Plugin | Category | Description | Source |
-| --- | --- | --- | --- |
-| [`ga-mcp-full`](https://github.com/ringo380/ga-mcp-full) | analytics | GA4 MCP server with full Admin API read/write access (30+ tools) — bundled with Claude Code slash commands, SessionStart auth hook, and OAuth browser flow. | [ringo380/ga-mcp-full](https://github.com/ringo380/ga-mcp-full) |
+| Plugin | Category | Description | Pinned | Source |
+| --- | --- | --- | --- | --- |
+| [`ga-mcp-full`](https://github.com/ringo380/ga-mcp-full) | analytics | GA4 MCP server with full Admin API read/write access (30+ tools) — bundled with Claude Code slash commands, SessionStart auth hook, and OAuth browser flow. | [`v0.3.1`](https://github.com/ringo380/ga-mcp-full/releases/tag/v0.3.1) | [ringo380/ga-mcp-full](https://github.com/ringo380/ga-mcp-full) |
 
 *More plugins land here as they're published.*
 
@@ -78,7 +78,7 @@ Each plugin entry in `.claude-plugin/marketplace.json` can pin to a branch, tag,
   "source": {
     "source": "github",
     "repo": "ringo380/ga-mcp-full",
-    "ref": "v0.1.0"           // tag or branch
+    "ref": "v0.3.1"           // tag or branch
     // or "sha": "abc123..."   // 40-char commit SHA for exact pin
   }
 }
