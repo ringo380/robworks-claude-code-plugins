@@ -32,7 +32,7 @@
       "source": {
         "source": "github",
         "repo": "ringo380/claude-quikgif",
-        "ref": "v0.1.0"
+        "ref": "v0.1.1"
       },
       "description": "QuikGIF MCP integration for Claude Code — bundled MCP shim, CLI update notices on session start, and lifecycle slash commands (status, install, update, install-mcp).",
       "homepage": "https://quikgif.com",
