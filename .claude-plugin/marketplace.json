@@ -44,6 +44,24 @@
       "category": "productivity",
       "tags": ["mcp", "quikgif", "screen-recording", "gif", "macos"],
       "keywords": ["quikgif", "mcp", "screen-recording", "gif", "macos"]
+    },
+    {
+      "name": "namecheap-mcp",
+      "source": {
+        "source": "github",
+        "repo": "ringo380/namecheap-mcp",
+        "ref": "v1.1.0"
+      },
+      "description": "Namecheap MCP server — manage domains, DNS, SSL, transfers, and account from Claude Code. Bundled /namecheap-mcp:setup slash command for guided first-run credential setup.",
+      "homepage": "https://github.com/ringo380/namecheap-mcp",
+      "repository": "https://github.com/ringo380/namecheap-mcp",
+      "license": "MIT",
+      "author": {
+        "name": "Ryan Robson"
+      },
+      "category": "infrastructure",
+      "tags": ["mcp", "namecheap", "dns", "domains", "ssl", "registrar"],
+      "keywords": ["namecheap", "mcp", "dns", "domains", "ssl", "registrar"]
     }
   ]
 }
