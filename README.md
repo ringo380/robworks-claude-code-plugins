@@ -1,6 +1,6 @@
 # Robworks Claude Code Plugins
 
-A personal [Claude Code](https://claude.com/product/claude-code) plugin marketplace curated by [Ryan Robson (`@ringo380`)](https://github.com/ringo380).
+A personal [Claude Code](https://claude.com/product/claude-code) plugin marketplace authored by Ryan Robson and [Robworks Software LLC](https://robworks.info).
 
 **Web catalog:** <https://code.robworks.info> — live view of the plugins below, rendered directly from `marketplace.json`.
 

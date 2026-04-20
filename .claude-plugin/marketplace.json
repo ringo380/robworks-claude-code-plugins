@@ -1,11 +1,11 @@
 {
   "name": "robworks-claude-code-plugins",
   "owner": {
-    "name": "Ryan Robson",
-    "url": "https://github.com/ringo380"
+    "name": "Ryan Robson and Robworks Software LLC",
+    "url": "https://robworks.info"
   },
   "metadata": {
-    "description": "Robworks Claude Code Plugins — a personal catalog of Claude Code plugins authored by Ryan Robson (ringo380).",
+    "description": "Robworks Claude Code Plugins — a personal catalog of Claude Code plugins authored by Ryan Robson and Robworks Software LLC.",
     "version": "0.1.0"
   },
   "plugins": [
@@ -21,7 +21,7 @@
       "repository": "https://github.com/ringo380/ga-mcp-full",
       "license": "MIT",
       "author": {
-        "name": "Ryan Robson"
+        "name": "Ryan Robson and Robworks Software LLC"
       },
       "category": "analytics",
       "tags": ["mcp", "google-analytics", "ga4", "analytics"],
@@ -39,7 +39,7 @@
       "repository": "https://github.com/ringo380/claude-quikgif",
       "license": "MIT",
       "author": {
-        "name": "Ryan Robson"
+        "name": "Ryan Robson and Robworks Software LLC"
       },
       "category": "productivity",
       "tags": ["mcp", "quikgif", "screen-recording", "gif", "macos"],
@@ -57,7 +57,7 @@
       "repository": "https://github.com/ringo380/namecheap-mcp",
       "license": "MIT",
       "author": {
-        "name": "Ryan Robson"
+        "name": "Ryan Robson and Robworks Software LLC"
       },
       "category": "infrastructure",
       "tags": ["mcp", "namecheap", "dns", "domains", "ssl", "registrar"],
