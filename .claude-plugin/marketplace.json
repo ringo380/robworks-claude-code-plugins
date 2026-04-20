@@ -50,7 +50,7 @@
       "source": {
         "source": "github",
         "repo": "ringo380/namecheap-mcp",
-        "ref": "v1.2.1"
+        "ref": "v1.3.2"
       },
       "description": "Namecheap MCP server — manage domains, DNS, SSL, transfers, and account from Claude Code. Bundled /namecheap-mcp:setup slash command for guided first-run credential setup.",
       "homepage": "https://github.com/ringo380/namecheap-mcp",

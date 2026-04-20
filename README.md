@@ -48,7 +48,7 @@ Inside Claude Code:
 | --- | --- | --- | --- | --- |
 | [`ga-mcp-full`](https://github.com/ringo380/ga-mcp-full) | analytics | GA4 MCP server with full Admin API read/write access (30+ tools) — bundled with Claude Code slash commands, SessionStart auth hook, and OAuth browser flow. | [`v0.5.0`](https://github.com/ringo380/ga-mcp-full/releases/tag/v0.5.0) | [ringo380/ga-mcp-full](https://github.com/ringo380/ga-mcp-full) |
 | [`claude-quikgif`](https://github.com/ringo380/claude-quikgif) | productivity | QuikGIF MCP integration — bundled MCP shim, CLI update notices on session start, lifecycle slash commands (`/claude-quikgif:status`, `install`, `update`, `install-mcp`). macOS-only. | [`v0.1.1`](https://github.com/ringo380/claude-quikgif/releases/tag/v0.1.1) | [ringo380/claude-quikgif](https://github.com/ringo380/claude-quikgif) |
-| [`namecheap-mcp`](https://github.com/ringo380/namecheap-mcp) | infrastructure | Namecheap MCP server — manage domains, DNS records, SSL certificates, transfers, and account balance. Bundled `/namecheap-mcp:setup` slash command for guided credential setup. | [`v1.2.1`](https://github.com/ringo380/namecheap-mcp/releases/tag/v1.2.1) | [ringo380/namecheap-mcp](https://github.com/ringo380/namecheap-mcp) |
+| [`namecheap-mcp`](https://github.com/ringo380/namecheap-mcp) | infrastructure | Namecheap MCP server — manage domains, DNS records, SSL certificates, transfers, and account balance. Bundled `/namecheap-mcp:setup` slash command for guided credential setup. | [`v1.3.2`](https://github.com/ringo380/namecheap-mcp/releases/tag/v1.3.2) | [ringo380/namecheap-mcp](https://github.com/ringo380/namecheap-mcp) |
 
 *More plugins land here as they're published.*
 
