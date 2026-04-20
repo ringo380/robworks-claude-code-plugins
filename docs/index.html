@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Robworks Claude Code Plugins</title>
+  <meta name="description" content="A personal Claude Code plugin marketplace by Ryan Robson (@ringo380) — MCP servers, developer workflow plugins, and more." />
+  <meta property="og:title" content="Robworks Claude Code Plugins" />
+  <meta property="og:description" content="A personal Claude Code plugin marketplace by Ryan Robson (@ringo380)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://code.robworks.info" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <p class="eyebrow">Claude Code marketplace</p>
+      <h1>Robworks Claude Code Plugins</h1>
+      <p class="tagline" id="tagline">A personal catalog of Claude Code plugins by Ryan Robson — MCP servers, dev workflow integrations, and more.</p>
+      <div class="hero-cta">
+        <div>
+          <div class="label">Add this marketplace</div>
+          <code>claude plugin marketplace add ringo380/robworks-claude-code-plugins</code>
+        </div>
+        <button class="copy-btn" data-copy="claude plugin marketplace add ringo380/robworks-claude-code-plugins">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <h2>Plugins</h2>
+        <p class="section-meta" id="plugin-count">Loading catalog…</p>
+        <div id="plugins" class="grid" aria-live="polite">
+          <div class="status">Fetching marketplace.json…</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 0.75rem;">
+      <span>MIT · maintained by <a href="https://github.com/ringo380">@ringo380</a></span>
+      <span><a href="https://github.com/ringo380/robworks-claude-code-plugins">Source on GitHub →</a></span>
+    </div>
+  </footer>
+
+  <script type="module">
+    const CATALOG_URL = "https://raw.githubusercontent.com/ringo380/robworks-claude-code-plugins/main/.claude-plugin/marketplace.json";
+    const MARKETPLACE_NAME = "robworks-claude-code-plugins";
+
+    const escapeHtml = (s) =>
+      String(s ?? "").replace(/[&<>"']/g, (c) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+      }[c]));
+
+    function renderCard(p) {
+      const repo = p.source?.repo ?? "";
+      const repoUrl = repo ? `https://github.com/${repo}` : (p.repository || "");
+      const ref = p.source?.ref || (p.source?.sha ? p.source.sha.slice(0, 7) : null);
+      const refUrl = ref && repo
+        ? `https://github.com/${repo}/${p.source?.sha ? "commit" : "releases/tag"}/${p.source?.sha ?? p.source.ref}`
+        : null;
+      const installCmd = `claude plugin install ${p.name}@${MARKETPLACE_NAME}`;
+      const tags = Array.isArray(p.tags) ? p.tags : [];
+
+      return `
+        <article class="card">
+          <div class="card-header">
+            <h3>${escapeHtml(p.name)}</h3>
+            ${p.category ? `<span class="badge">${escapeHtml(p.category)}</span>` : ""}
+          </div>
+          ${p.description ? `<p class="description">${escapeHtml(p.description)}</p>` : ""}
+          ${tags.length ? `<div class="tags">${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : ""}
+          <div class="install">
+            <code>${escapeHtml(installCmd)}</code>
+            <button class="copy-btn" data-copy="${escapeHtml(installCmd)}">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span class="pinned">
+              ${ref ? `Pinned: ${refUrl ? `<a href="${escapeHtml(refUrl)}">${escapeHtml(ref)}</a>` : escapeHtml(ref)}` : "tracks default branch"}
+            </span>
+            ${repoUrl ? `<a class="repo-link" href="${escapeHtml(repoUrl)}">Source →</a>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function wireCopyButtons(root) {
+      root.querySelectorAll(".copy-btn").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const text = btn.dataset.copy;
+          if (!text) return;
+          try {
+            await navigator.clipboard.writeText(text);
+            const prev = btn.textContent;
+            btn.textContent = "Copied";
+            btn.classList.add("copied");
+            setTimeout(() => {
+              btn.textContent = prev;
+              btn.classList.remove("copied");
+            }, 1500);
+          } catch {
+            btn.textContent = "Copy failed";
+          }
+        });
+      });
+    }
+
+    async function load() {
+      const host = document.getElementById("plugins");
+      const count = document.getElementById("plugin-count");
+      const tagline = document.getElementById("tagline");
+      try {
+        const res = await fetch(CATALOG_URL, { cache: "no-cache" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const plugins = Array.isArray(data.plugins) ? data.plugins : [];
+
+        if (data.metadata?.description) {
+          tagline.textContent = data.metadata.description;
+        }
+
+        count.textContent = `${plugins.length} plugin${plugins.length === 1 ? "" : "s"} available`;
+
+        if (plugins.length === 0) {
+          host.innerHTML = `<div class="status">No plugins published yet.</div>`;
+          return;
+        }
+
+        host.innerHTML = plugins.map(renderCard).join("");
+        wireCopyButtons(document);
+      } catch (err) {
+        count.textContent = "";
+        host.innerHTML = `<div class="status">Could not load catalog (${escapeHtml(err.message)}). <a href="https://github.com/ringo380/robworks-claude-code-plugins/blob/main/.claude-plugin/marketplace.json">View raw marketplace.json →</a></div>`;
+      }
+    }
+
+    wireCopyButtons(document);
+    load();
+  </script>
+</body>
+</html>

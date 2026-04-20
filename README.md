@@ -2,6 +2,8 @@
 
 A personal [Claude Code](https://claude.com/product/claude-code) plugin marketplace curated by [Ryan Robson (`@ringo380`)](https://github.com/ringo380).
 
+**Web catalog:** <https://code.robworks.info> — live view of the plugins below, rendered directly from `marketplace.json`.
+
 A **marketplace** is a catalog of plugins you can install into Claude Code. Adding this marketplace to your Claude Code installation lets you discover, install, update, and remove any of its plugins with a single command.
 
 ## Prerequisites
@@ -116,6 +118,7 @@ See the [Claude Code plugin settings docs](https://code.claude.com/docs/en/setti
 robworks-claude-code-plugins/
 ├── .claude-plugin/
 │   └── marketplace.json   # The catalog — edit to add/update plugins
+├── docs/                  # GitHub Pages site at https://code.robworks.info
 └── README.md              # This file
 ```
 
