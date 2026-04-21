@@ -292,12 +292,12 @@
         <p class="section-meta" id="plugin-count">3 plugins available</p>
         <div id="plugins-grid" class="grid" aria-live="polite">
           <!-- BEGIN:PLUGIN-CARDS -->
-          <article class="card" id="plugin-ga-mcp-full" itemscope itemtype="https://schema.org/SoftwareApplication">
+          <article class="card" id="plugin-ga-mcp-full">
             <div class="card-header">
-              <h3 itemprop="name">ga-mcp-full</h3>
+              <h3>ga-mcp-full</h3>
               <span class="badge">analytics</span>
             </div>
-            <p class="description" itemprop="description">GA4 MCP server with full Admin API read/write access — bundled with Claude Code auth helpers and SessionStart bootstrap.</p>
+            <p class="description">GA4 MCP server with full Admin API read/write access — bundled with Claude Code auth helpers and SessionStart bootstrap.</p>
             <div class="tags">
               <span class="tag">mcp</span>
               <span class="tag">google-analytics</span>
@@ -309,19 +309,17 @@
               <button class="copy-btn" data-copy="claude plugin install ga-mcp-full@robworks-claude-code-plugins">Copy</button>
             </div>
             <div class="card-footer">
-              <span class="pinned">Pinned: <a href="https://github.com/ringo380/ga-mcp-full/releases/tag/v0.5.0" itemprop="softwareVersion">v0.5.0</a></span>
-              <a class="repo-link" href="https://github.com/ringo380/ga-mcp-full" itemprop="codeRepository">Source →</a>
+              <span class="pinned">Pinned: <a href="https://github.com/ringo380/ga-mcp-full/releases/tag/v0.5.0">v0.5.0</a></span>
+              <a class="repo-link" href="https://github.com/ringo380/ga-mcp-full">Source →</a>
             </div>
-            <meta itemprop="applicationCategory" content="DeveloperApplication" />
-            <meta itemprop="operatingSystem" content="macOS, Linux, Windows" />
           </article>
 
-          <article class="card" id="plugin-claude-quikgif" itemscope itemtype="https://schema.org/SoftwareApplication">
+          <article class="card" id="plugin-claude-quikgif">
             <div class="card-header">
-              <h3 itemprop="name">claude-quikgif</h3>
+              <h3>claude-quikgif</h3>
               <span class="badge">productivity</span>
             </div>
-            <p class="description" itemprop="description">QuikGIF MCP integration for Claude Code — bundled MCP shim, CLI update notices on session start, and lifecycle slash commands (status, install, update, install-mcp).</p>
+            <p class="description">QuikGIF MCP integration for Claude Code — bundled MCP shim, CLI update notices on session start, and lifecycle slash commands (status, install, update, install-mcp).</p>
             <div class="tags">
               <span class="tag">mcp</span>
               <span class="tag">quikgif</span>
@@ -334,19 +332,17 @@
               <button class="copy-btn" data-copy="claude plugin install claude-quikgif@robworks-claude-code-plugins">Copy</button>
             </div>
             <div class="card-footer">
-              <span class="pinned">Pinned: <a href="https://github.com/ringo380/claude-quikgif/releases/tag/v0.1.1" itemprop="softwareVersion">v0.1.1</a></span>
-              <a class="repo-link" href="https://github.com/ringo380/claude-quikgif" itemprop="codeRepository">Source →</a>
+              <span class="pinned">Pinned: <a href="https://github.com/ringo380/claude-quikgif/releases/tag/v0.1.1">v0.1.1</a></span>
+              <a class="repo-link" href="https://github.com/ringo380/claude-quikgif">Source →</a>
             </div>
-            <meta itemprop="applicationCategory" content="DeveloperApplication" />
-            <meta itemprop="operatingSystem" content="macOS" />
           </article>
 
-          <article class="card" id="plugin-namecheap-mcp" itemscope itemtype="https://schema.org/SoftwareApplication">
+          <article class="card" id="plugin-namecheap-mcp">
             <div class="card-header">
-              <h3 itemprop="name">namecheap-mcp</h3>
+              <h3>namecheap-mcp</h3>
               <span class="badge">infrastructure</span>
             </div>
-            <p class="description" itemprop="description">Namecheap MCP server — manage domains, DNS, SSL, transfers, and account from Claude Code. Bundled /namecheap-mcp:setup slash command for guided first-run credential setup.</p>
+            <p class="description">Namecheap MCP server — manage domains, DNS, SSL, transfers, and account from Claude Code. Bundled /namecheap-mcp:setup slash command for guided first-run credential setup.</p>
             <div class="tags">
               <span class="tag">mcp</span>
               <span class="tag">namecheap</span>
@@ -360,11 +356,9 @@
               <button class="copy-btn" data-copy="claude plugin install namecheap-mcp@robworks-claude-code-plugins">Copy</button>
             </div>
             <div class="card-footer">
-              <span class="pinned">Pinned: <a href="https://github.com/ringo380/namecheap-mcp/releases/tag/v1.3.2" itemprop="softwareVersion">v1.3.2</a></span>
-              <a class="repo-link" href="https://github.com/ringo380/namecheap-mcp" itemprop="codeRepository">Source →</a>
+              <span class="pinned">Pinned: <a href="https://github.com/ringo380/namecheap-mcp/releases/tag/v1.3.2">v1.3.2</a></span>
+              <a class="repo-link" href="https://github.com/ringo380/namecheap-mcp">Source →</a>
             </div>
-            <meta itemprop="applicationCategory" content="DeveloperApplication" />
-            <meta itemprop="operatingSystem" content="macOS, Linux, Windows" />
           </article>
 <!-- END:PLUGIN-CARDS -->
         </div>
@@ -476,12 +470,12 @@
       const tags = Array.isArray(p.tags) ? p.tags : [];
 
       return `
-        <article class="card" id="plugin-${escapeHtml(p.name)}" itemscope itemtype="https://schema.org/SoftwareApplication">
+        <article class="card" id="plugin-${escapeHtml(p.name)}">
           <div class="card-header">
-            <h3 itemprop="name">${escapeHtml(p.name)}</h3>
+            <h3>${escapeHtml(p.name)}</h3>
             ${p.category ? `<span class="badge">${escapeHtml(p.category)}</span>` : ""}
           </div>
-          ${p.description ? `<p class="description" itemprop="description">${escapeHtml(p.description)}</p>` : ""}
+          ${p.description ? `<p class="description">${escapeHtml(p.description)}</p>` : ""}
           ${tags.length ? `<div class="tags">${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : ""}
           <div class="install">
             <code>${escapeHtml(installCmd)}</code>
@@ -489,9 +483,9 @@
           </div>
           <div class="card-footer">
             <span class="pinned">
-              ${ref ? `Pinned: ${refUrl ? `<a href="${escapeHtml(refUrl)}" itemprop="softwareVersion">${escapeHtml(ref)}</a>` : `<span itemprop="softwareVersion">${escapeHtml(ref)}</span>`}` : "tracks default branch"}
+              ${ref ? `Pinned: ${refUrl ? `<a href="${escapeHtml(refUrl)}">${escapeHtml(ref)}</a>` : escapeHtml(ref)}` : "tracks default branch"}
             </span>
-            ${repoUrl ? `<a class="repo-link" href="${escapeHtml(repoUrl)}" itemprop="codeRepository">Source →</a>` : ""}
+            ${repoUrl ? `<a class="repo-link" href="${escapeHtml(repoUrl)}">Source →</a>` : ""}
           </div>
         </article>
       `;

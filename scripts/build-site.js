@@ -68,18 +68,17 @@ function renderCard(plugin) {
   const rl = refLabel(plugin);
   const ru = refUrl(plugin);
   const rp = repoUrl(plugin);
-  const os = operatingSystemFor(plugin);
 
   const lines = [];
-  lines.push(`          <article class="card" id="plugin-${escapeHtml(plugin.name)}" itemscope itemtype="https://schema.org/SoftwareApplication">`);
+  lines.push(`          <article class="card" id="plugin-${escapeHtml(plugin.name)}">`);
   lines.push(`            <div class="card-header">`);
-  lines.push(`              <h3 itemprop="name">${escapeHtml(plugin.name)}</h3>`);
+  lines.push(`              <h3>${escapeHtml(plugin.name)}</h3>`);
   if (plugin.category) {
     lines.push(`              <span class="badge">${escapeHtml(plugin.category)}</span>`);
   }
   lines.push(`            </div>`);
   if (plugin.description) {
-    lines.push(`            <p class="description" itemprop="description">${escapeHtml(plugin.description)}</p>`);
+    lines.push(`            <p class="description">${escapeHtml(plugin.description)}</p>`);
   }
   if (tags.length) {
     lines.push(`            <div class="tags">`);
@@ -95,18 +94,16 @@ function renderCard(plugin) {
   lines.push(`            <div class="card-footer">`);
   if (rl) {
     const verInner = ru
-      ? `<a href="${escapeHtml(ru)}" itemprop="softwareVersion">${escapeHtml(rl)}</a>`
-      : `<span itemprop="softwareVersion">${escapeHtml(rl)}</span>`;
+      ? `<a href="${escapeHtml(ru)}">${escapeHtml(rl)}</a>`
+      : escapeHtml(rl);
     lines.push(`              <span class="pinned">Pinned: ${verInner}</span>`);
   } else {
     lines.push(`              <span class="pinned">tracks default branch</span>`);
   }
   if (rp) {
-    lines.push(`              <a class="repo-link" href="${escapeHtml(rp)}" itemprop="codeRepository">Source →</a>`);
+    lines.push(`              <a class="repo-link" href="${escapeHtml(rp)}">Source →</a>`);
   }
   lines.push(`            </div>`);
-  lines.push(`            <meta itemprop="applicationCategory" content="DeveloperApplication" />`);
-  lines.push(`            <meta itemprop="operatingSystem" content="${escapeHtml(os)}" />`);
   lines.push(`          </article>`);
   return lines.join("\n");
 }
