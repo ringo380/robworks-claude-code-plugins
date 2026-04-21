@@ -216,7 +216,23 @@
           "name": "Are these plugins free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Every plugin in this marketplace is MIT-licensed and free to install and use. Some plugins require third-party credentials (e.g. a Namecheap API key or a Google Analytics property) which are separate from the plugin itself."
+            "text": "Yes. Every plugin in this marketplace is MIT-licensed and free to install and use. Some plugins require third-party credentials (a Namecheap API key, a Google Analytics property, a QuikGIF license) which are configured out-of-band — the plugin itself never charges you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I contribute a plugin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — open an issue or PR at the source repository (github.com/ringo380/robworks-claude-code-plugins). See the Contributing a plugin section in the README for the criteria."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pin a plugin to a specific version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the Pinned link on each card for the exact version."
           }
         }
       ]
