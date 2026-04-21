@@ -278,12 +278,146 @@ h2 {
   font-size: 0.95rem;
 }
 
+/* Quickstart steps */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.steps li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.step-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.step-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+code.inline {
+  background: var(--code-bg);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* Prose (about, faq, contribute) */
+.prose {
+  max-width: 70ch;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose a {
+  color: var(--accent);
+}
+
+/* FAQ details */
+#faq details {
+  border-top: 1px solid var(--border);
+  padding: 0.9rem 0;
+}
+
+#faq details:last-of-type {
+  border-bottom: 1px solid var(--border);
+}
+
+#faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#faq summary::after {
+  content: "+";
+  color: var(--muted);
+  font-size: 1.2rem;
+  transition: transform 0.15s ease;
+}
+
+#faq details[open] summary::after {
+  content: "−";
+}
+
+#faq details > p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Section dividers */
+#quickstart,
+#plugins,
+#about,
+#faq,
+#contribute {
+  border-bottom: 1px solid var(--border);
+}
+
+#contribute {
+  border-bottom: none;
+}
+
 /* Footer */
 footer {
   padding: 3rem 0 4rem;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+footer .footer-row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
