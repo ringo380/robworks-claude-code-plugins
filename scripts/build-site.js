@@ -201,7 +201,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once, then claude plugin install <name>@robworks-claude-code-plugins for any plugin listed on this page.",
+              "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once to register the catalog, then claude plugin install <name>@robworks-claude-code-plugins for any plugin above. Inside an interactive Claude Code session, the slash-command equivalents are /plugin marketplace add … and /plugin install ….",
           },
         },
         {
@@ -228,7 +228,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Yes — open an issue or PR at the source repository (github.com/ringo380/robworks-claude-code-plugins). See the Contributing a plugin section in the README for the criteria.",
+              "Yes — open an issue or PR at the source repository. See Contributing a plugin in the README for the criteria.",
           },
         },
         {
@@ -237,7 +237,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the Pinned link on each card for the exact version.",
+              "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the ref: link on each card for the exact version.",
           },
         },
       ],

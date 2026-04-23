@@ -27,10 +27,6 @@
   <meta name="twitter:image" content="https://code.robworks.info/og-image.png" />
   <meta name="twitter:image:alt" content="Robworks Claude Code Plugins marketplace" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
-
   <link rel="stylesheet" href="./style.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 
@@ -204,7 +200,7 @@
           "name": "How do I install a plugin from this marketplace?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once, then claude plugin install <name>@robworks-claude-code-plugins for any plugin listed on this page."
+            "text": "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once to register the catalog, then claude plugin install <name>@robworks-claude-code-plugins for any plugin above. Inside an interactive Claude Code session, the slash-command equivalents are /plugin marketplace add … and /plugin install …."
           }
         },
         {
@@ -228,7 +224,7 @@
           "name": "Can I contribute a plugin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — open an issue or PR at the source repository (github.com/ringo380/robworks-claude-code-plugins). See the Contributing a plugin section in the README for the criteria."
+            "text": "Yes — open an issue or PR at the source repository. See Contributing a plugin in the README for the criteria."
           }
         },
         {
@@ -236,7 +232,7 @@
           "name": "How do I pin a plugin to a specific version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the Pinned link on each card for the exact version."
+            "text": "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the ref: link on each card for the exact version."
           }
         }
       ]
@@ -318,7 +314,7 @@
       <div class="container">
         <h2 id="plugins-heading">plugins</h2>
         <p class="section-meta" id="plugin-count">3 plugins available</p>
-        <div id="plugins-grid" class="grid" aria-live="polite">
+        <div id="plugins-grid" class="grid">
           <!-- BEGIN:PLUGIN-CARDS -->
           <article class="card" id="plugin-ga-mcp-full">
             <div class="card-header">
@@ -463,7 +459,7 @@
         </details>
         <details>
           <summary>How do I pin a plugin to a specific version?</summary>
-          <p>Each plugin entry in <code class="inline">marketplace.json</code> carries a <code class="inline">ref</code> (branch or tag) or <code class="inline">sha</code> (exact commit). Every plugin on this page is already pinned to a tagged release; see the "Pinned" link on each card for the exact version.</p>
+          <p>Each plugin entry in <code class="inline">marketplace.json</code> carries a <code class="inline">ref</code> (branch or tag) or <code class="inline">sha</code> (exact commit). Every plugin on this page is already pinned to a tagged release; see the <code class="inline">ref:</code> link on each card for the exact version.</p>
         </details>
       </div>
     </section>
@@ -487,8 +483,8 @@
     <div class="container footer-row">
       <span>MIT &middot; Ryan Robson &amp; <a href="https://robworks.info">Robworks Software LLC</a></span>
       <span class="footer-links">
-        <a href="https://github.com/ringo380/robworks-claude-code-plugins">github</a>
-        <a href="/sitemap.xml">sitemap</a>
+        <a href="https://github.com/ringo380/robworks-claude-code-plugins"><span aria-hidden="true">[</span>github<span aria-hidden="true">]</span></a>
+        <a href="/sitemap.xml"><span aria-hidden="true">[</span>sitemap<span aria-hidden="true">]</span></a>
       </span>
     </div>
   </footer>

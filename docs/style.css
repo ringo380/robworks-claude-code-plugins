@@ -31,8 +31,8 @@
   --focus-ring-offset: 2px;
 
   /* Type */
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --fs-eyebrow: 0.78rem;
   --fs-hero: clamp(2.1rem, 5.2vw, 3.25rem);
@@ -790,19 +790,11 @@ footer .footer-links {
   flex-wrap: wrap;
 }
 
-footer .footer-links a::before {
-  content: "[";
+footer .footer-links a span[aria-hidden] {
   color: var(--border-strong);
-  margin-right: 0.1rem;
   text-decoration: none;
   display: inline-block;
-}
-footer .footer-links a::after {
-  content: "]";
-  color: var(--border-strong);
-  margin-left: 0.1rem;
-  text-decoration: none;
-  display: inline-block;
+  margin: 0 0.1rem;
 }
 
 /* ------------------------------------------------------------------
