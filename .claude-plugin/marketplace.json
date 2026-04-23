@@ -5,7 +5,7 @@
     "url": "https://robworks.info"
   },
   "metadata": {
-    "description": "Robworks Claude Code Plugins — a personal catalog of Claude Code plugins authored by Ryan Robson and Robworks Software LLC.",
+    "description": "A personal catalog of MCP servers and developer-workflow plugins for Claude Code, by Ryan Robson and Robworks Software LLC.",
     "version": "0.1.0"
   },
   "plugins": [
@@ -34,7 +34,7 @@
         "repo": "ringo380/claude-quikgif",
         "ref": "v0.1.1"
       },
-      "description": "QuikGIF MCP integration for Claude Code — bundled MCP shim, CLI update notices on session start, and lifecycle slash commands (status, install, update, install-mcp).",
+      "description": "QuikGIF MCP integration for Claude Code — bundled MCP shim, session-start update notices, and lifecycle slash commands (status, install, update, install-mcp).",
       "homepage": "https://quikgif.com",
       "repository": "https://github.com/ringo380/claude-quikgif",
       "license": "MIT",
@@ -52,7 +52,7 @@
         "repo": "ringo380/namecheap-mcp",
         "ref": "v1.3.2"
       },
-      "description": "Namecheap MCP server — manage domains, DNS, SSL, transfers, and account from Claude Code. Bundled /namecheap-mcp:setup slash command for guided first-run credential setup.",
+      "description": "Namecheap MCP server — manage domains, DNS, SSL, transfers, and account from Claude Code. Includes a guided /namecheap-mcp:setup command for first-run credentials.",
       "homepage": "https://github.com/ringo380/namecheap-mcp",
       "repository": "https://github.com/ringo380/namecheap-mcp",
       "license": "MIT",

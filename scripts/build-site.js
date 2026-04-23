@@ -154,7 +154,7 @@ function renderJsonLd(plugins) {
       "url": `${SITE_URL}/`,
       "name": "Robworks Claude Code Plugins",
       "description":
-        "A personal Claude Code plugin marketplace — MCP servers and developer workflow plugins authored by Ryan Robson and Robworks Software LLC.",
+        "A personal Claude Code plugin marketplace — MCP servers and developer-workflow plugins by Ryan Robson and Robworks Software LLC.",
       "inLanguage": "en-US",
       "isPartOf": { "@id": `${SITE_URL}/#website` },
       "publisher": { "@id": "https://robworks.info/#org" },
@@ -184,7 +184,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "A Claude Code plugin marketplace is a catalog of plugins — MCP servers, slash commands, agents, skills, and hooks — that you can add to Claude Code with a single command. Adding a marketplace lets you discover and install any of its plugins from inside your terminal.",
+              "A catalog of plugins — MCP servers, slash commands, agents, skills, and hooks — you can add to Claude Code in one command. Once added, you can discover and install any plugin from your terminal, and stay in sync with the latest pinned releases.",
           },
         },
         {
@@ -202,7 +202,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "An MCP (Model Context Protocol) server exposes tools and resources to an LLM client like Claude Code. Every plugin in this marketplace that ends in -mcp or includes MCP in its name bundles an MCP server you can call from natural-language prompts inside Claude Code.",
+              "An MCP (Model Context Protocol) server exposes tools and resources to an LLM client like Claude Code. Every plugin on this page bundles an MCP server — invoke its tools from plain-language prompts in Claude Code, no custom client code required.",
           },
         },
         {
@@ -211,7 +211,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Yes. Every plugin in this marketplace is MIT-licensed and free to install and use. Some plugins require third-party credentials (a Namecheap API key, a Google Analytics property, a QuikGIF license) which are configured out-of-band — the plugin itself never charges you.",
+              "Yes. Every plugin is MIT-licensed and free to install and use. Some need third-party credentials (a Namecheap API key, a Google Analytics property, a QuikGIF license) that you configure separately — the plugin never charges you.",
           },
         },
         {
