@@ -7,104 +7,147 @@
     html, body { margin: 0; padding: 0; }
     body {
       width: 1200px;
-      height: 630px;
-      background: #0e0e0d;
-      color: #f0efec;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #0c0c0a;
+      color: #ece9dd;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       -webkit-font-smoothing: antialiased;
       position: relative;
-      overflow: hidden;
+      padding: 56px 80px 40px;
+      box-sizing: border-box;
+      min-height: 630px;
     }
     .accent-bar {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 10px;
-      background: linear-gradient(90deg, #d87e3a 0%, #e89452 50%, #d87e3a 100%);
+      height: 6px;
+      background: #e89452;
+      z-index: 2;
     }
-    .top {
+    .grid-bg {
       position: absolute;
-      top: 70px;
-      left: 80px;
-      right: 80px;
+      inset: 0;
+      background-image:
+        linear-gradient(#1c1c1a 1px, transparent 1px),
+        linear-gradient(90deg, #1c1c1a 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.7), transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.7), transparent 75%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
     }
     .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 20px;
-      color: #e89452;
-      font-weight: 600;
-      margin: 0 0 22px;
+      font-size: 19px;
+      color: #a3c47e;
+      font-weight: 500;
+      margin: 0 0 16px;
+      letter-spacing: 0.02em;
+    }
+    .eyebrow::before {
+      content: "// ";
+      color: #a3c47e;
     }
     h1 {
-      font-size: 82px;
-      line-height: 1.02;
-      letter-spacing: -0.025em;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 60px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
       margin: 0;
       font-weight: 700;
+      color: #ece9dd;
     }
     .tagline {
-      font-size: 28px;
-      color: #cfcfcc;
-      margin: 26px 0 0;
-      line-height: 1.28;
-      max-width: 980px;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 22px;
+      color: #b3afa1;
+      margin: 18px 0 36px;
+      line-height: 1.4;
+      max-width: 1000px;
+      font-weight: 400;
     }
-    .bottom {
-      position: absolute;
-      bottom: 60px;
-      left: 80px;
-      right: 80px;
+    .terminal {
+      background: #161614;
+      border: 1px solid #3a3934;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 36px 0 22px;
+      max-width: 920px;
     }
-    .footer-row {
-      margin-top: 26px;
-    }
-    .chips {
+    .terminal-chrome {
       display: flex;
-      gap: 12px;
-      margin: 0 0 22px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 18px;
+      background: #1c1c1a;
+      border-bottom: 1px solid #2c2b27;
     }
-    .chip {
-      background: #252527;
-      color: #cfcfcc;
-      border: 1px solid #2a2a2c;
+    .terminal-dots { display: inline-flex; gap: 7px; }
+    .terminal-dots span {
+      display: block;
+      width: 11px;
+      height: 11px;
       border-radius: 999px;
-      padding: 10px 20px;
-      font-size: 20px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #3a3934;
+    }
+    .terminal-title {
+      font-size: 14px;
+      color: #9b988b;
+    }
+    .terminal-body {
+      padding: 14px 22px;
+      background: #1a1a18;
+      font-size: 19px;
+      color: #ece9dd;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .terminal-body::before {
+      content: "$";
+      color: #a3c47e;
+      font-weight: 600;
     }
     .footer-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #a3a3a0;
-      font-size: 20px;
+      color: #b3afa1;
+      font-size: 18px;
     }
     .domain {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       color: #e89452;
       font-weight: 600;
+    }
+    .domain::before {
+      content: "// ";
+      color: #a3c47e;
     }
   </style>
 </head>
 <body>
   <div class="accent-bar"></div>
-  <div class="top">
-    <p class="eyebrow">Claude Code · Plugin Marketplace</p>
+  <div class="grid-bg"></div>
+  <div class="content">
+    <p class="eyebrow">claude code · plugin marketplace</p>
     <h1>Robworks Claude Code Plugins</h1>
-    <p class="tagline">MCP servers and developer workflow plugins — free, MIT-licensed, installable in one command.</p>
-  </div>
-  <div class="bottom">
-    <div class="chips">
-      <span class="chip">ga-mcp-full</span>
-      <span class="chip">claude-quikgif</span>
-      <span class="chip">namecheap-mcp</span>
+    <p class="tagline">MCP servers and developer-workflow plugins — free, MIT-licensed, installable in one command.</p>
+    <div class="terminal">
+      <div class="terminal-chrome">
+        <span class="terminal-dots"><span></span><span></span><span></span></span>
+        <span class="terminal-title">~/robworks $ bash</span>
+      </div>
+      <div class="terminal-body">
+        claude plugin marketplace add ringo380/robworks-claude-code-plugins
+      </div>
     </div>
     <div class="footer-row">
       <span class="domain">code.robworks.info</span>
-      <span>by Ryan Robson &amp; Robworks Software LLC</span>
+      <span>Ryan Robson &amp; Robworks Software LLC</span>
     </div>
   </div>
 </body>

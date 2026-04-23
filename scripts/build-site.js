@@ -68,11 +68,13 @@ function renderCard(plugin) {
   const rl = refLabel(plugin);
   const ru = refUrl(plugin);
   const rp = repoUrl(plugin);
+  const name = escapeHtml(plugin.name);
+  const cmd = escapeHtml(installCmd);
 
   const lines = [];
-  lines.push(`          <article class="card" id="plugin-${escapeHtml(plugin.name)}">`);
+  lines.push(`          <article class="card" id="plugin-${name}">`);
   lines.push(`            <div class="card-header">`);
-  lines.push(`              <h3>${escapeHtml(plugin.name)}</h3>`);
+  lines.push(`              <h3>${name}</h3>`);
   if (plugin.category) {
     lines.push(`              <span class="badge">${escapeHtml(plugin.category)}</span>`);
   }
@@ -87,21 +89,27 @@ function renderCard(plugin) {
     }
     lines.push(`            </div>`);
   }
-  lines.push(`            <div class="install">`);
-  lines.push(`              <code>${escapeHtml(installCmd)}</code>`);
-  lines.push(`              <button class="copy-btn" data-copy="${escapeHtml(installCmd)}">Copy</button>`);
+  lines.push(`            <div class="terminal">`);
+  lines.push(`              <div class="terminal-body">`);
+  lines.push(`                <div class="terminal-line">`);
+  lines.push(`                  <code class="terminal-cmd">${cmd}</code>`);
+  lines.push(`                </div>`);
+  lines.push(`                <div class="terminal-actions">`);
+  lines.push(`                  <button class="copy-btn" data-copy="${cmd}" aria-label="Copy install command for ${name}">copy</button>`);
+  lines.push(`                </div>`);
+  lines.push(`              </div>`);
   lines.push(`            </div>`);
   lines.push(`            <div class="card-footer">`);
   if (rl) {
     const verInner = ru
       ? `<a href="${escapeHtml(ru)}">${escapeHtml(rl)}</a>`
       : escapeHtml(rl);
-    lines.push(`              <span class="pinned">Pinned: ${verInner}</span>`);
+    lines.push(`              <span class="pinned">ref: ${verInner}</span>`);
   } else {
     lines.push(`              <span class="pinned">tracks default branch</span>`);
   }
   if (rp) {
-    lines.push(`              <a class="repo-link" href="${escapeHtml(rp)}">Source →</a>`);
+    lines.push(`              <a class="repo-link" href="${escapeHtml(rp)}">source →</a>`);
   }
   lines.push(`            </div>`);
   lines.push(`          </article>`);
@@ -193,7 +201,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once, then claude plugin install <name>@robworks-claude-code-plugins for any plugin listed on this page.",
+              "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once to register the catalog, then claude plugin install <name>@robworks-claude-code-plugins for any plugin above. Inside an interactive Claude Code session, the slash-command equivalents are /plugin marketplace add … and /plugin install ….",
           },
         },
         {
@@ -220,7 +228,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Yes — open an issue or PR at the source repository (github.com/ringo380/robworks-claude-code-plugins). See the Contributing a plugin section in the README for the criteria.",
+              "Yes — open an issue or PR at the source repository. See Contributing a plugin in the README for the criteria.",
           },
         },
         {
@@ -229,7 +237,7 @@ function renderJsonLd(plugins) {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the Pinned link on each card for the exact version.",
+              "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the ref: link on each card for the exact version.",
           },
         },
       ],

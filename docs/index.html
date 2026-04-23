@@ -7,7 +7,7 @@
   <meta name="description" content="Personal Claude Code plugin marketplace. Install MCP servers for Google Analytics, Namecheap, and QuikGIF — plus developer workflow plugins — with one command." />
   <link rel="canonical" href="https://code.robworks.info/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#d87e3a" />
+  <meta name="theme-color" content="#c46a25" />
   <meta name="author" content="Ryan Robson and Robworks Software LLC" />
 
   <meta property="og:type" content="website" />
@@ -200,7 +200,7 @@
           "name": "How do I install a plugin from this marketplace?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once, then claude plugin install <name>@robworks-claude-code-plugins for any plugin listed on this page."
+            "text": "Run claude plugin marketplace add ringo380/robworks-claude-code-plugins once to register the catalog, then claude plugin install <name>@robworks-claude-code-plugins for any plugin above. Inside an interactive Claude Code session, the slash-command equivalents are /plugin marketplace add … and /plugin install …."
           }
         },
         {
@@ -224,7 +224,7 @@
           "name": "Can I contribute a plugin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — open an issue or PR at the source repository (github.com/ringo380/robworks-claude-code-plugins). See the Contributing a plugin section in the README for the criteria."
+            "text": "Yes — open an issue or PR at the source repository. See Contributing a plugin in the README for the criteria."
           }
         },
         {
@@ -232,7 +232,7 @@
           "name": "How do I pin a plugin to a specific version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the Pinned link on each card for the exact version."
+            "text": "Each plugin entry in marketplace.json carries a ref (branch or tag) or sha (exact commit). Every plugin on this page is already pinned to a tagged release; see the ref: link on each card for the exact version."
           }
         }
       ]
@@ -243,17 +243,29 @@
 <!-- END:JSONLD -->
 </head>
 <body>
+  <a class="skip" href="#plugins">Skip to plugins</a>
+  <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
+
   <header>
     <div class="container">
-      <p class="eyebrow">Claude Code marketplace</p>
+      <p class="eyebrow">claude code marketplace</p>
       <h1>Robworks Claude Code Plugins</h1>
       <p class="tagline" id="tagline">A personal catalog of MCP servers and developer-workflow plugins for Claude Code, by Ryan Robson and Robworks Software LLC.</p>
-      <div class="hero-cta">
-        <div>
-          <div class="label">Add this marketplace</div>
-          <code>claude plugin marketplace add ringo380/robworks-claude-code-plugins</code>
+
+      <p class="hero-cta-label">add this marketplace</p>
+      <div class="terminal" aria-label="Marketplace install command">
+        <div class="terminal-chrome" aria-hidden="true">
+          <span class="terminal-dots"><span></span><span></span><span></span></span>
+          <span class="terminal-title">~/robworks $ bash</span>
         </div>
-        <button class="copy-btn" data-copy="claude plugin marketplace add ringo380/robworks-claude-code-plugins">Copy</button>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <code class="terminal-cmd">claude plugin marketplace add ringo380/robworks-claude-code-plugins<span class="caret" aria-hidden="true">▊</span></code>
+          </div>
+          <div class="terminal-actions">
+            <button class="copy-btn" data-copy="claude plugin marketplace add ringo380/robworks-claude-code-plugins" aria-label="Copy marketplace install command">copy</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -261,25 +273,37 @@
   <main>
     <section id="quickstart" aria-labelledby="quickstart-heading">
       <div class="container">
-        <h2 id="quickstart-heading">Quickstart</h2>
+        <h2 id="quickstart-heading">quickstart</h2>
         <p class="section-meta">Three commands from zero to installed.</p>
         <ol class="steps">
           <li>
-            <div class="step-label"><span class="step-num">1</span> Add the marketplace</div>
-            <div class="install">
-              <code>claude plugin marketplace add ringo380/robworks-claude-code-plugins</code>
-              <button class="copy-btn" data-copy="claude plugin marketplace add ringo380/robworks-claude-code-plugins">Copy</button>
+            <div class="step-label"><span class="step-num">01</span> Add the marketplace</div>
+            <div class="terminal">
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <code class="terminal-cmd">claude plugin marketplace add ringo380/robworks-claude-code-plugins</code>
+                </div>
+                <div class="terminal-actions">
+                  <button class="copy-btn" data-copy="claude plugin marketplace add ringo380/robworks-claude-code-plugins" aria-label="Copy step 1 command">copy</button>
+                </div>
+              </div>
             </div>
           </li>
           <li>
-            <div class="step-label"><span class="step-num">2</span> Install a plugin</div>
-            <div class="install">
-              <code>claude plugin install ga-mcp-full@robworks-claude-code-plugins</code>
-              <button class="copy-btn" data-copy="claude plugin install ga-mcp-full@robworks-claude-code-plugins">Copy</button>
+            <div class="step-label"><span class="step-num">02</span> Install a plugin</div>
+            <div class="terminal">
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <code class="terminal-cmd">claude plugin install ga-mcp-full@robworks-claude-code-plugins</code>
+                </div>
+                <div class="terminal-actions">
+                  <button class="copy-btn" data-copy="claude plugin install ga-mcp-full@robworks-claude-code-plugins" aria-label="Copy step 2 command">copy</button>
+                </div>
+              </div>
             </div>
           </li>
           <li>
-            <div class="step-label"><span class="step-num">3</span> Use it in Claude Code</div>
+            <div class="step-label"><span class="step-num">03</span> Use it in Claude Code</div>
             <p class="step-note">Restart Claude Code. The plugin's slash commands, MCP tools, hooks, and agents load automatically — run <code class="inline">/help</code> or <code class="inline">/plugin list</code> to see them.</p>
           </li>
         </ol>
@@ -288,9 +312,9 @@
 
     <section id="plugins" aria-labelledby="plugins-heading">
       <div class="container">
-        <h2 id="plugins-heading">Plugins</h2>
+        <h2 id="plugins-heading">plugins</h2>
         <p class="section-meta" id="plugin-count">3 plugins available</p>
-        <div id="plugins-grid" class="grid" aria-live="polite">
+        <div id="plugins-grid" class="grid">
           <!-- BEGIN:PLUGIN-CARDS -->
           <article class="card" id="plugin-ga-mcp-full">
             <div class="card-header">
@@ -304,13 +328,19 @@
               <span class="tag">ga4</span>
               <span class="tag">analytics</span>
             </div>
-            <div class="install">
-              <code>claude plugin install ga-mcp-full@robworks-claude-code-plugins</code>
-              <button class="copy-btn" data-copy="claude plugin install ga-mcp-full@robworks-claude-code-plugins">Copy</button>
+            <div class="terminal">
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <code class="terminal-cmd">claude plugin install ga-mcp-full@robworks-claude-code-plugins</code>
+                </div>
+                <div class="terminal-actions">
+                  <button class="copy-btn" data-copy="claude plugin install ga-mcp-full@robworks-claude-code-plugins" aria-label="Copy install command for ga-mcp-full">copy</button>
+                </div>
+              </div>
             </div>
             <div class="card-footer">
-              <span class="pinned">Pinned: <a href="https://github.com/ringo380/ga-mcp-full/releases/tag/v0.5.0">v0.5.0</a></span>
-              <a class="repo-link" href="https://github.com/ringo380/ga-mcp-full">Source →</a>
+              <span class="pinned">ref: <a href="https://github.com/ringo380/ga-mcp-full/releases/tag/v0.5.0">v0.5.0</a></span>
+              <a class="repo-link" href="https://github.com/ringo380/ga-mcp-full">source →</a>
             </div>
           </article>
 
@@ -327,13 +357,19 @@
               <span class="tag">gif</span>
               <span class="tag">macos</span>
             </div>
-            <div class="install">
-              <code>claude plugin install claude-quikgif@robworks-claude-code-plugins</code>
-              <button class="copy-btn" data-copy="claude plugin install claude-quikgif@robworks-claude-code-plugins">Copy</button>
+            <div class="terminal">
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <code class="terminal-cmd">claude plugin install claude-quikgif@robworks-claude-code-plugins</code>
+                </div>
+                <div class="terminal-actions">
+                  <button class="copy-btn" data-copy="claude plugin install claude-quikgif@robworks-claude-code-plugins" aria-label="Copy install command for claude-quikgif">copy</button>
+                </div>
+              </div>
             </div>
             <div class="card-footer">
-              <span class="pinned">Pinned: <a href="https://github.com/ringo380/claude-quikgif/releases/tag/v0.1.1">v0.1.1</a></span>
-              <a class="repo-link" href="https://github.com/ringo380/claude-quikgif">Source →</a>
+              <span class="pinned">ref: <a href="https://github.com/ringo380/claude-quikgif/releases/tag/v0.1.1">v0.1.1</a></span>
+              <a class="repo-link" href="https://github.com/ringo380/claude-quikgif">source →</a>
             </div>
           </article>
 
@@ -351,13 +387,19 @@
               <span class="tag">ssl</span>
               <span class="tag">registrar</span>
             </div>
-            <div class="install">
-              <code>claude plugin install namecheap-mcp@robworks-claude-code-plugins</code>
-              <button class="copy-btn" data-copy="claude plugin install namecheap-mcp@robworks-claude-code-plugins">Copy</button>
+            <div class="terminal">
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <code class="terminal-cmd">claude plugin install namecheap-mcp@robworks-claude-code-plugins</code>
+                </div>
+                <div class="terminal-actions">
+                  <button class="copy-btn" data-copy="claude plugin install namecheap-mcp@robworks-claude-code-plugins" aria-label="Copy install command for namecheap-mcp">copy</button>
+                </div>
+              </div>
             </div>
             <div class="card-footer">
-              <span class="pinned">Pinned: <a href="https://github.com/ringo380/namecheap-mcp/releases/tag/v1.3.2">v1.3.2</a></span>
-              <a class="repo-link" href="https://github.com/ringo380/namecheap-mcp">Source →</a>
+              <span class="pinned">ref: <a href="https://github.com/ringo380/namecheap-mcp/releases/tag/v1.3.2">v1.3.2</a></span>
+              <a class="repo-link" href="https://github.com/ringo380/namecheap-mcp">source →</a>
             </div>
           </article>
 <!-- END:PLUGIN-CARDS -->
@@ -367,7 +409,7 @@
 
     <section id="about" aria-labelledby="about-heading">
       <div class="container prose">
-        <h2 id="about-heading">What is this?</h2>
+        <h2 id="about-heading">about</h2>
         <p>
           <strong>Robworks Claude Code Plugins</strong> is a personal marketplace of
           <a href="https://code.claude.com/docs/en/plugins">Claude Code plugins</a> by
@@ -394,7 +436,7 @@
 
     <section id="faq" aria-labelledby="faq-heading">
       <div class="container prose">
-        <h2 id="faq-heading">FAQ</h2>
+        <h2 id="faq-heading">faq</h2>
         <details>
           <summary>What is a Claude Code plugin marketplace?</summary>
           <p>A catalog of plugins — MCP servers, slash commands, agents, skills, and hooks — you can add to Claude Code in one command. Once added, you can discover and install any plugin from your terminal, and stay in sync with the latest pinned releases.</p>
@@ -417,14 +459,14 @@
         </details>
         <details>
           <summary>How do I pin a plugin to a specific version?</summary>
-          <p>Each plugin entry in <code class="inline">marketplace.json</code> carries a <code class="inline">ref</code> (branch or tag) or <code class="inline">sha</code> (exact commit). Every plugin on this page is already pinned to a tagged release; see the "Pinned" link on each card for the exact version.</p>
+          <p>Each plugin entry in <code class="inline">marketplace.json</code> carries a <code class="inline">ref</code> (branch or tag) or <code class="inline">sha</code> (exact commit). Every plugin on this page is already pinned to a tagged release; see the <code class="inline">ref:</code> link on each card for the exact version.</p>
         </details>
       </div>
     </section>
 
     <section id="contribute" aria-labelledby="contribute-heading">
       <div class="container prose">
-        <h2 id="contribute-heading">Contribute or fork</h2>
+        <h2 id="contribute-heading">contribute</h2>
         <p>
           The marketplace catalog lives at
           <a href="https://github.com/ringo380/robworks-claude-code-plugins">ringo380/robworks-claude-code-plugins</a>
@@ -439,11 +481,10 @@
 
   <footer>
     <div class="container footer-row">
-      <span>MIT · authored by Ryan Robson and <a href="https://robworks.info">Robworks Software LLC</a></span>
-      <span>
-        <a href="https://github.com/ringo380/robworks-claude-code-plugins">Source on GitHub</a>
-        &nbsp;·&nbsp;
-        <a href="/sitemap.xml">Sitemap</a>
+      <span>MIT &middot; Ryan Robson &amp; <a href="https://robworks.info">Robworks Software LLC</a></span>
+      <span class="footer-links">
+        <a href="https://github.com/ringo380/robworks-claude-code-plugins"><span aria-hidden="true">[</span>github<span aria-hidden="true">]</span></a>
+        <a href="/sitemap.xml"><span aria-hidden="true">[</span>sitemap<span aria-hidden="true">]</span></a>
       </span>
     </div>
   </footer>
@@ -466,27 +507,46 @@
         : null;
       const installCmd = `claude plugin install ${p.name}@${MARKETPLACE_NAME}`;
       const tags = Array.isArray(p.tags) ? p.tags : [];
+      const name = escapeHtml(p.name);
+
+      const refInner = ref
+        ? (refUrl
+            ? `ref: <a href="${escapeHtml(refUrl)}">${escapeHtml(ref)}</a>`
+            : `ref: ${escapeHtml(ref)}`)
+        : "tracks default branch";
 
       return `
-        <article class="card" id="plugin-${escapeHtml(p.name)}">
+        <article class="card" id="plugin-${name}">
           <div class="card-header">
-            <h3>${escapeHtml(p.name)}</h3>
+            <h3>${name}</h3>
             ${p.category ? `<span class="badge">${escapeHtml(p.category)}</span>` : ""}
           </div>
           ${p.description ? `<p class="description">${escapeHtml(p.description)}</p>` : ""}
           ${tags.length ? `<div class="tags">${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : ""}
-          <div class="install">
-            <code>${escapeHtml(installCmd)}</code>
-            <button class="copy-btn" data-copy="${escapeHtml(installCmd)}">Copy</button>
+          <div class="terminal">
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <code class="terminal-cmd">${escapeHtml(installCmd)}</code>
+              </div>
+              <div class="terminal-actions">
+                <button class="copy-btn" data-copy="${escapeHtml(installCmd)}" aria-label="Copy install command for ${name}">copy</button>
+              </div>
+            </div>
           </div>
           <div class="card-footer">
-            <span class="pinned">
-              ${ref ? `Pinned: ${refUrl ? `<a href="${escapeHtml(refUrl)}">${escapeHtml(ref)}</a>` : escapeHtml(ref)}` : "tracks default branch"}
-            </span>
-            ${repoUrl ? `<a class="repo-link" href="${escapeHtml(repoUrl)}">Source →</a>` : ""}
+            <span class="pinned">${refInner}</span>
+            ${repoUrl ? `<a class="repo-link" href="${escapeHtml(repoUrl)}">source →</a>` : ""}
           </div>
         </article>
       `;
+    }
+
+    const status = document.getElementById("copy-status");
+    function announce(msg) {
+      if (!status) return;
+      status.textContent = "";
+      // Force a re-announce on repeat copies
+      requestAnimationFrame(() => { status.textContent = msg; });
     }
 
     function wireCopyButtons(root) {
@@ -498,15 +558,16 @@
           if (!text) return;
           try {
             await navigator.clipboard.writeText(text);
-            const prev = btn.textContent;
-            btn.textContent = "Copied";
+            btn.textContent = "✓ copied";
             btn.classList.add("copied");
+            announce(`Copied: ${text}`);
             setTimeout(() => {
-              btn.textContent = prev;
+              btn.textContent = "copy";
               btn.classList.remove("copied");
-            }, 1500);
+            }, 1600);
           } catch {
-            btn.textContent = "Copy failed";
+            btn.textContent = "copy failed";
+            announce("Copy failed");
           }
         });
       });
