@@ -273,6 +273,16 @@
       <h1>Robworks Claude Code Plugins</h1>
       <p class="tagline" id="tagline">A personal catalog of MCP servers and developer-workflow plugins for Claude Code, by Ryan Robson and Robworks Software LLC.</p>
 
+      <p class="hero-stats">
+        <span><strong id="hero-plugin-count">3</strong> plugins</span>
+        <span class="sep" aria-hidden="true"> · </span>
+        <span><strong>MIT</strong> licensed</span>
+        <span class="sep" aria-hidden="true"> · </span>
+        <span>zero telemetry</span>
+        <span class="sep" aria-hidden="true"> · </span>
+        <span>macOS <span aria-hidden="true">·</span> linux <span aria-hidden="true">·</span> windows</span>
+      </p>
+
       <p class="hero-cta-label">add this marketplace</p>
       <div class="terminal" aria-label="Marketplace install command">
         <div class="terminal-chrome" aria-hidden="true">
@@ -294,7 +304,7 @@
   <main>
     <section id="quickstart" aria-labelledby="quickstart-heading">
       <div class="container">
-        <h2 id="quickstart-heading">quickstart</h2>
+        <h2 id="quickstart-heading"><span class="section-num" aria-hidden="true">[01]  # </span>quickstart</h2>
         <p class="section-meta">Three commands from zero to installed.</p>
         <ol class="steps">
           <li>
@@ -325,7 +335,18 @@
           </li>
           <li>
             <div class="step-label"><span class="step-num">03</span> Use it in Claude Code</div>
-            <p class="step-note">Restart Claude Code. The plugin's slash commands, MCP tools, hooks, and agents load automatically — run <code class="inline">/help</code> or <code class="inline">/plugin list</code> to see them.</p>
+            <div class="terminal">
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <code class="terminal-cmd">/plugin list</code>
+                </div>
+                <div class="terminal-line is-output">
+                  <span class="output-arrow" aria-hidden="true">→</span>
+                  <code class="terminal-cmd">ga-mcp-full <span aria-hidden="true">·</span> claude-quikgif <span aria-hidden="true">·</span> namecheap-mcp</code>
+                </div>
+              </div>
+            </div>
+            <p class="step-note">Restart Claude Code. Slash commands, MCP tools, hooks, and agents load automatically.</p>
           </li>
         </ol>
       </div>
@@ -333,7 +354,7 @@
 
     <section id="plugins" aria-labelledby="plugins-heading">
       <div class="container">
-        <h2 id="plugins-heading">plugins</h2>
+        <h2 id="plugins-heading"><span class="section-num" aria-hidden="true">[02]  # </span>plugins</h2>
         <p class="section-meta" id="plugin-count">3 plugins available</p>
         <div id="plugins-grid" class="grid">
           <!-- BEGIN:PLUGIN-CARDS -->
@@ -430,7 +451,8 @@
 
     <section id="about" aria-labelledby="about-heading">
       <div class="container prose">
-        <h2 id="about-heading">about</h2>
+        <h2 id="about-heading"><span class="section-num" aria-hidden="true">[03]  # </span>about</h2>
+        <p class="prose-prompt" aria-hidden="true"><span>$</span> cat about.md</p>
         <p>
           <strong>Robworks Claude Code Plugins</strong> is a personal marketplace of
           <a href="https://code.claude.com/docs/en/plugins">Claude Code plugins</a> by
@@ -457,29 +479,29 @@
 
     <section id="faq" aria-labelledby="faq-heading">
       <div class="container prose">
-        <h2 id="faq-heading">faq</h2>
+        <h2 id="faq-heading"><span class="section-num" aria-hidden="true">[04]  # </span>faq</h2>
         <details>
-          <summary>What is a Claude Code plugin marketplace?</summary>
+          <summary><span class="faq-num" aria-hidden="true">01</span>What is a Claude Code plugin marketplace?</summary>
           <p>A catalog of plugins — MCP servers, slash commands, agents, skills, and hooks — you can add to Claude Code in one command. Once added, you can discover and install any plugin from your terminal, and stay in sync with the latest pinned releases.</p>
         </details>
         <details>
-          <summary>How do I install a plugin from this marketplace?</summary>
+          <summary><span class="faq-num" aria-hidden="true">02</span>How do I install a plugin from this marketplace?</summary>
           <p>Run <code class="inline">claude plugin marketplace add ringo380/robworks-claude-code-plugins</code> once to register the catalog, then <code class="inline">claude plugin install &lt;name&gt;@robworks-claude-code-plugins</code> for any plugin above. Inside an interactive Claude Code session, the slash-command equivalents are <code class="inline">/plugin marketplace add …</code> and <code class="inline">/plugin install …</code>.</p>
         </details>
         <details>
-          <summary>What is an MCP server?</summary>
+          <summary><span class="faq-num" aria-hidden="true">03</span>What is an MCP server?</summary>
           <p>An MCP (Model Context Protocol) server exposes tools and resources to an LLM client like Claude Code. Every plugin on this page bundles an MCP server — invoke its tools from plain-language prompts in Claude Code, no custom client code required.</p>
         </details>
         <details>
-          <summary>Are these plugins free?</summary>
+          <summary><span class="faq-num" aria-hidden="true">04</span>Are these plugins free?</summary>
           <p>Yes. Every plugin is MIT-licensed and free to install and use. Some need third-party credentials (a Namecheap API key, a Google Analytics property, a QuikGIF license) that you configure separately — the plugin never charges you.</p>
         </details>
         <details>
-          <summary>Can I contribute a plugin?</summary>
+          <summary><span class="faq-num" aria-hidden="true">05</span>Can I contribute a plugin?</summary>
           <p>Yes — open an issue or PR at the <a href="https://github.com/ringo380/robworks-claude-code-plugins">source repository</a>. See <a href="https://github.com/ringo380/robworks-claude-code-plugins#contributing-a-plugin">Contributing a plugin</a> in the README for the criteria.</p>
         </details>
         <details>
-          <summary>How do I pin a plugin to a specific version?</summary>
+          <summary><span class="faq-num" aria-hidden="true">06</span>How do I pin a plugin to a specific version?</summary>
           <p>Each plugin entry in <code class="inline">marketplace.json</code> carries a <code class="inline">ref</code> (branch or tag) or <code class="inline">sha</code> (exact commit). Every plugin on this page is already pinned to a tagged release; see the <code class="inline">ref:</code> link on each card for the exact version.</p>
         </details>
       </div>
@@ -487,7 +509,7 @@
 
     <section id="contribute" aria-labelledby="contribute-heading">
       <div class="container prose">
-        <h2 id="contribute-heading">contribute</h2>
+        <h2 id="contribute-heading"><span class="section-num" aria-hidden="true">[05]  # </span>contribute</h2>
         <p>
           The marketplace catalog lives at
           <a href="https://github.com/ringo380/robworks-claude-code-plugins">ringo380/robworks-claude-code-plugins</a>
@@ -597,6 +619,7 @@
     async function refreshFromRemote() {
       const host = document.getElementById("plugins-grid");
       const count = document.getElementById("plugin-count");
+      const heroCount = document.getElementById("hero-plugin-count");
       const tagline = document.getElementById("tagline");
       if (!host) return;
       try {
@@ -611,6 +634,10 @@
 
         if (count) {
           count.textContent = `${plugins.length} plugin${plugins.length === 1 ? "" : "s"} available`;
+        }
+
+        if (heroCount) {
+          heroCount.textContent = String(plugins.length);
         }
 
         if (plugins.length === 0) return;
