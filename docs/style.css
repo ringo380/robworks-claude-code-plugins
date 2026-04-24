@@ -130,6 +130,119 @@ a:hover {
 }
 
 /* ------------------------------------------------------------------
+   Navbar
+------------------------------------------------------------------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 44px;
+  background: var(--bg);
+  border-bottom: 1px dashed var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.nav-brand {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav-brand::before {
+  content: "// ";
+  opacity: 0.45;
+  font-weight: 400;
+}
+
+.nav-brand:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown summary {
+  list-style: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  min-width: 210px;
+  box-shadow: var(--shadow);
+}
+
+.nav-dropdown ul li a {
+  display: block;
+  padding: 0.3rem 1rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.nav-dropdown ul li a:hover {
+  color: var(--text);
+  background: var(--chip-bg);
+  text-decoration: none;
+}
+
+/* Offset anchors below sticky nav */
+:target,
+section[id],
+article[id] {
+  scroll-margin-top: 56px;
+}
+
+@media (max-width: 520px) {
+  .site-nav {
+    padding: 0 1rem;
+    font-size: 0.72rem;
+  }
+  .nav-links {
+    gap: 0.75rem;
+  }
+  .nav-brand::before {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------
    Focus
 ------------------------------------------------------------------- */
 :focus { outline: none; }
