@@ -388,9 +388,9 @@ h1 {
   line-height: 1.8;
 }
 
-.hero-stats span + span::before {
-  content: " · ";
+.hero-stats .sep {
   color: var(--border-strong);
+  margin: 0 0.1rem;
 }
 
 .hero-stats strong {
@@ -497,9 +497,13 @@ h1 {
 }
 
 .terminal-line.is-output::before {
-  content: "→";
+  content: none;
+}
+
+.terminal-line .output-arrow {
   color: var(--border-strong);
   font-weight: 500;
+  flex-shrink: 0;
 }
 
 /* Blinking caret (hero only) */
@@ -562,10 +566,6 @@ h1 {
 /* ------------------------------------------------------------------
    Section headings
 ------------------------------------------------------------------- */
-main { counter-reset: section; }
-
-main > section { counter-increment: section; }
-
 h2 {
   font-family: var(--font-mono);
   font-size: clamp(1.65rem, 3vw, 2rem);
@@ -579,8 +579,7 @@ h2 {
   font-variant-numeric: tabular-nums;
 }
 
-h2::before {
-  content: "[" counter(section, decimal-leading-zero) "]  # ";
+h2 .section-num {
   color: var(--accent);
   font-weight: 600;
   flex-shrink: 0;
@@ -888,17 +887,13 @@ code.inline {
 /* ------------------------------------------------------------------
    FAQ
 ------------------------------------------------------------------- */
-#faq { counter-reset: faq; }
-
 #faq details {
   border-top: 1px dashed var(--border-strong);
   padding: 1rem 0 1rem 3.25rem;
   position: relative;
-  counter-increment: faq;
 }
 
-#faq details::before {
-  content: counter(faq, decimal-leading-zero);
+#faq .faq-num {
   position: absolute;
   left: 0;
   top: 1rem;
@@ -920,7 +915,7 @@ code.inline {
 
 @media (max-width: 480px) {
   #faq details { padding-left: 2.5rem; }
-  #faq details::before { width: 1.75rem; }
+  #faq .faq-num { width: 1.75rem; }
 }
 
 #faq summary {
