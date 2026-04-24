@@ -273,6 +273,10 @@
       <h1>Robworks Claude Code Plugins</h1>
       <p class="tagline" id="tagline">A personal catalog of MCP servers and developer-workflow plugins for Claude Code, by Ryan Robson and Robworks Software LLC.</p>
 
+      <p class="hero-stats" aria-label="Catalog facts">
+        <span><strong>3</strong> plugins</span><span><strong>MIT</strong> licensed</span><span>zero telemetry</span><span>macOS · linux · windows</span>
+      </p>
+
       <p class="hero-cta-label">add this marketplace</p>
       <div class="terminal" aria-label="Marketplace install command">
         <div class="terminal-chrome" aria-hidden="true">
@@ -325,7 +329,17 @@
           </li>
           <li>
             <div class="step-label"><span class="step-num">03</span> Use it in Claude Code</div>
-            <p class="step-note">Restart Claude Code. The plugin's slash commands, MCP tools, hooks, and agents load automatically — run <code class="inline">/help</code> or <code class="inline">/plugin list</code> to see them.</p>
+            <div class="terminal">
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <code class="terminal-cmd">/plugin list</code>
+                </div>
+                <div class="terminal-line is-output">
+                  <code class="terminal-cmd">ga-mcp-full · claude-quikgif · namecheap-mcp</code>
+                </div>
+              </div>
+            </div>
+            <p class="step-note">Restart Claude Code. Slash commands, MCP tools, hooks, and agents load automatically.</p>
           </li>
         </ol>
       </div>
@@ -431,6 +445,7 @@
     <section id="about" aria-labelledby="about-heading">
       <div class="container prose">
         <h2 id="about-heading">about</h2>
+        <p class="prose-prompt" aria-hidden="true"><span>$</span> cat about.md</p>
         <p>
           <strong>Robworks Claude Code Plugins</strong> is a personal marketplace of
           <a href="https://code.claude.com/docs/en/plugins">Claude Code plugins</a> by
