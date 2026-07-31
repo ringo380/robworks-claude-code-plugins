@@ -240,9 +240,9 @@
       "source": {
         "source": "github",
         "repo": "Robworks-Code/notation",
-        "ref": "v0.10.0"
+        "ref": "v0.11.0"
       },
-      "description": "Capture session learnings into the right Claude Code memory tier instead of dumping them all into CLAUDE.md. /notation:notate reads the session, right-sizes the flow, and presents proposals as a scorecard plus per-tier tables with diffs; /notation:notate-all applies them without the picker; /notation:feedback sends a bug or routing correction to the maintainer. The bundled notation-audit skill keeps the global CLAUDE.md under its size budget, relocating detail into linked topical notes rather than deleting it. Project-scoped and global-scoped memory are kept independent: a learning that stops being true in another repo goes to that project's memory or docs, never into your global notes, and the audit reports the two scopes separately. Notation is additive: it preserves existing lines and dates new entries rather than overwriting history.",
+      "description": "Capture session learnings into the right Claude Code memory tier instead of dumping them all into CLAUDE.md. /notation:notate reads the session, right-sizes the flow, and presents proposals as a scorecard plus per-tier tables with diffs; /notation:notate-all applies them without the picker; /notation:feedback sends a bug or routing correction to the maintainer. The bundled notation-audit skill keeps the global CLAUDE.md under its size budget, relocating detail into linked topical notes rather than deleting it. Project-scoped and global-scoped memory are kept independent: a learning that stops being true in another repo goes to that project's memory or docs, never into your global notes, and the audit reports the two scopes separately. Backups are sorted by kind rather than lumped together: a run's own rollback copies are offered for cleanup once its verification passed, while your own CLAUDE.md snapshot history is reported and left alone - and a rotation policy of your own always wins. Notation is additive: it preserves existing lines and dates new entries rather than overwriting history.",
       "homepage": "https://github.com/Robworks-Code/notation",
       "repository": "https://github.com/Robworks-Code/notation",
       "license": "MIT",
