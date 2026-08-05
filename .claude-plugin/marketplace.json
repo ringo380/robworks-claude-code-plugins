@@ -344,7 +344,7 @@
       "description": "Develop a product as isolated shards coupled only through a frozen, versioned contract, with drift caught mechanically. A Claude Code plugin plus a deterministic engine: SessionStart/PreToolUse/Stop hooks sandbox each shard to its own slice and a read-only contract, and /shard-* commands diff a shard's surface against the contract and gate phases. /shard-orchestrate plans the shards into dependency waves and can drive a real headless Claude Code session per shard, each confined to its own directory and a read-only contract, then re-reads every surface from disk to decide the verdict.",
       "homepage": "https://github.com/robworks-code/sharding",
       "repository": "https://github.com/robworks-code/sharding",
-      "license": "BUSL-1.1",
+      "license": "MIT",
       "author": {
         "name": "Ryan Robson and Robworks Software LLC"
       },
