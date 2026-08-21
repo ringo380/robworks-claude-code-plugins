@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "A personal catalog of MCP servers and developer-workflow plugins for Claude Code, by Ryan Robson and Robworks Software LLC.",
-    "version": "0.1.3"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "ga-mcp-full",
       "source": {
-        "source": "github",
-        "repo": "ringo380/ga-mcp-full",
+        "source": "url",
+        "url": "https://github.com/ringo380/ga-mcp-full.git",
         "ref": "v0.5.0"
       },
       "description": "GA4 MCP server with full Admin API read/write access \u2014 bundled with Claude Code auth helpers and SessionStart bootstrap.",
@@ -40,8 +40,8 @@
     {
       "name": "claude-quikgif",
       "source": {
-        "source": "github",
-        "repo": "ringo380/claude-quikgif",
+        "source": "url",
+        "url": "https://github.com/ringo380/claude-quikgif.git",
         "ref": "v0.2.0"
       },
       "description": "QuikGIF MCP integration for Claude Code \u2014 bundled MCP shim, session-start update notices, and lifecycle slash commands (status, install, update, install-mcp).",
@@ -70,8 +70,8 @@
     {
       "name": "namecheap-mcp",
       "source": {
-        "source": "github",
-        "repo": "ringo380/namecheap-mcp",
+        "source": "url",
+        "url": "https://github.com/ringo380/namecheap-mcp.git",
         "ref": "v1.5.0"
       },
       "description": "Namecheap MCP server \u2014 manage domains, DNS, SSL, transfers, and account from Claude Code. Includes a guided /namecheap-mcp:setup command for first-run credentials.",
@@ -102,8 +102,8 @@
     {
       "name": "appstore-connect-mcp",
       "source": {
-        "source": "github",
-        "repo": "ringo380/appstore-connect-mcp",
+        "source": "url",
+        "url": "https://github.com/ringo380/appstore-connect-mcp.git",
         "ref": "v2.2.3"
       },
       "description": "App Store Connect MCP server. Query 923 API endpoints and run authenticated calls \u2014 apps, reviews, sales reports, TestFlight, beta testers, and more.",
@@ -134,8 +134,8 @@
     {
       "name": "xcode-mcp-server",
       "source": {
-        "source": "github",
-        "repo": "ringo380/Xcode-mcp-server",
+        "source": "url",
+        "url": "https://github.com/ringo380/Xcode-mcp-server.git",
         "ref": "v1.0.0"
       },
       "description": "Xcode MCP server \u2014 build projects and run tests from Claude Code with structured output, log persistence, and Xcode 15/16+ compatibility.",
@@ -169,8 +169,8 @@
     {
       "name": "cpanel-mcp",
       "source": {
-        "source": "github",
-        "repo": "ringo380/claude-cpanel-mcp",
+        "source": "url",
+        "url": "https://github.com/ringo380/claude-cpanel-mcp.git",
         "ref": "v0.4.4"
       },
       "description": "cPanel UAPI MCP server - 74 tools for email, DNS, file read and write, MySQL, FTP, SSL, cron, subdomains, addon domains, and backups on shared cPanel hosting. Multi-account profiles with atomic token rotation, dry-run auth_test, cPHulk lockout detection, POST routing that keeps secrets out of the cPanel access log, and a state-machine /cpanel-mcp:setup.",
@@ -204,8 +204,8 @@
     {
       "name": "ableton",
       "source": {
-        "source": "github",
-        "repo": "ringo380/ableton-mcp-max",
+        "source": "url",
+        "url": "https://github.com/ringo380/ableton-mcp-max.git",
         "ref": "v0.34.0"
       },
       "description": "Drive Ableton Live 11 and 12 from Claude Code - tracks, clips, MIDI notes, devices, mixer, automation, arrangement, scenes, transport, and preset generation (Wavetable, Simpler, rack macros & zones, and macro->parameter mappings) over a bundled MCP server. Includes a guided /ableton:setup, a /ableton:analyze best-practice set report, plus workflow commands for building and editing tracks.",
@@ -238,8 +238,8 @@
     {
       "name": "notation",
       "source": {
-        "source": "github",
-        "repo": "Robworks-Code/notation",
+        "source": "url",
+        "url": "https://github.com/Robworks-Code/notation.git",
         "ref": "v0.12.0"
       },
       "description": "Capture session learnings into the right Claude Code memory tier instead of dumping them all into CLAUDE.md. /notation:notate reads the session, right-sizes the flow, and presents proposals as a scorecard plus per-tier tables with diffs; /notation:notate-all applies them without the picker; /notation:feedback sends a bug or routing correction to the maintainer. The bundled notation-audit skill keeps the global CLAUDE.md under its size budget, relocating detail into linked topical notes rather than deleting it. Project-scoped and global-scoped memory are kept independent: a learning that stops being true in another repo goes to that project's memory or docs, never into your global notes, and the audit reports the two scopes separately. Backups are sorted by kind rather than lumped together: a run's own rollback copies are offered for cleanup once its verification passed, while your own CLAUDE.md snapshot history is reported and left alone - and a rotation policy of your own always wins. Capture measures rather than guesses: every proposal is priced in characters before anything is written, a whole-run budget check catches additions that are each individually fine but collectively too large, and after the writes land it re-measures and reports any edit that did not land as drafted - telling that apart from a file another session changed underneath it. Notation is additive: it preserves existing lines and dates new entries rather than overwriting history.",
@@ -270,8 +270,8 @@
     {
       "name": "deep-review",
       "source": {
-        "source": "github",
-        "repo": "Robworks-Code/deep-review",
+        "source": "url",
+        "url": "https://github.com/Robworks-Code/deep-review.git",
         "ref": "v0.3.1"
       },
       "description": "Multi-agent pull request review that surfaces every finding instead of hiding low-confidence ones. /deep-review:review scores each issue on confidence and severity, verifies impactful-but-uncertain ones, then presents a two-axis triage in-session and posts to the PR on confirm. /deep-review:auto double-checks then auto-applies a fix for every issue to the working tree, runs the repo's local gate to verify them, and confirms every fix survived the run. Works with or without a PR, tolerates a dirty tree without touching unrelated uncommitted work, and never assumes CI exists.",
@@ -302,8 +302,8 @@
     {
       "name": "colab",
       "source": {
-        "source": "github",
-        "repo": "robworks-code/colab-mcp-extended",
+        "source": "url",
+        "url": "https://github.com/robworks-code/colab-mcp-extended.git",
         "ref": "v1.3.0"
       },
       "description": "Drive Google Colab from Claude Code over a bundled MCP server \u2014 open Drive notebooks, run code in the kernel, manage multiple sessions, upload/download VM files, mount Drive, read Colab secrets, inspect variables, edit notebook cells, and run fine-tune round-trip + local MLX conversion helpers. Optional headless/Playwright backend. Includes guided /colab:setup and /colab:help commands.",
@@ -337,8 +337,8 @@
     {
       "name": "sharding",
       "source": {
-        "source": "github",
-        "repo": "robworks-code/sharding",
+        "source": "url",
+        "url": "https://github.com/robworks-code/sharding.git",
         "ref": "v0.0.9"
       },
       "description": "Develop a product as isolated shards coupled only through a frozen, versioned contract, with drift caught mechanically. A Claude Code plugin plus a deterministic engine: SessionStart/PreToolUse/Stop hooks sandbox each shard to its own slice and a read-only contract, and /shard-* commands diff a shard's surface against the contract and gate phases. /shard-orchestrate plans the shards into dependency waves and can drive a real headless Claude Code session per shard, each confined to its own directory and a read-only contract, then re-reads every surface from disk to decide the verdict.",
@@ -367,8 +367,8 @@
     {
       "name": "icloud-drive-mcp",
       "source": {
-        "source": "github",
-        "repo": "robworks-code/icloud-drive-mcp",
+        "source": "url",
+        "url": "https://github.com/robworks-code/icloud-drive-mcp.git",
         "ref": "v1.0.1"
       },
       "description": "MCP server for managing iCloud Drive files via the local sync folder — list, read, write, delete, move, and search files, plus file/dir info. macOS only.",
@@ -398,8 +398,8 @@
     {
       "name": "audacity",
       "source": {
-        "source": "github",
-        "repo": "robworks-code/audacity-mcp-max",
+        "source": "url",
+        "url": "https://github.com/robworks-code/audacity-mcp-max.git",
         "ref": "v0.3.0"
       },
       "description": "Drive Audacity from Claude Code - 132 tools plus one-call cleanup and mastering pipelines, with guided setup and diagnostics.",
