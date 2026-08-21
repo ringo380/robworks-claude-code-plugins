@@ -369,7 +369,7 @@
       "source": {
         "source": "github",
         "repo": "robworks-code/icloud-drive-mcp",
-        "ref": "v1.0.0"
+        "ref": "v1.0.1"
       },
       "description": "MCP server for managing iCloud Drive files via the local sync folder — list, read, write, delete, move, and search files, plus file/dir info. macOS only.",
       "homepage": "https://github.com/robworks-code/icloud-drive-mcp",
